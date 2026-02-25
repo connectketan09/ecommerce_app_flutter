@@ -5,16 +5,16 @@ class AppColors {
   // Primary functionality
   static const Color primary = Color(0xFF1E1E1E); // Dark Grey/Black
   static const Color primaryVariant = Color(0xFF333333);
-  
+
   // Accents for premium feel
   static const Color accent = Color(0xFFD4AF37); // Muted Gold
   static const Color accentLight = Color(0xFFFFD700);
-  
+
   // Backgrounds
   static const Color background = Color(0xFFF9F9F9); // Very light grey
   static const Color surface = Colors.white;
   static const Color error = Color(0xFFB00020);
-  
+
   // Text
   static const Color textPrimary = Color(0xFF121212);
   static const Color textSecondary = Color(0xFF757575);
@@ -29,49 +29,49 @@ class AppColors {
 class AppTextStyles {
   // Headings
   static TextStyle get headlineLarge => GoogleFonts.playfairDisplay(
-    fontSize: 32,
-    fontWeight: FontWeight.bold,
-    color: AppColors.textPrimary,
-  );
+        fontSize: 32,
+        fontWeight: FontWeight.bold,
+        color: AppColors.textPrimary,
+      );
 
   static TextStyle get headlineMedium => GoogleFonts.playfairDisplay(
-    fontSize: 24,
-    fontWeight: FontWeight.w600,
-    color: AppColors.textPrimary,
-  );
+        fontSize: 24,
+        fontWeight: FontWeight.w600,
+        color: AppColors.textPrimary,
+      );
 
   static TextStyle get headlineSmall => GoogleFonts.poppins(
-    fontSize: 20,
-    fontWeight: FontWeight.w600,
-    color: AppColors.textPrimary,
-  );
+        fontSize: 20,
+        fontWeight: FontWeight.w600,
+        color: AppColors.textPrimary,
+      );
 
   // Body
   static TextStyle get bodyLarge => GoogleFonts.inter(
-    fontSize: 16,
-    fontWeight: FontWeight.w400,
-    color: AppColors.textPrimary,
-  );
+        fontSize: 16,
+        fontWeight: FontWeight.w400,
+        color: AppColors.textPrimary,
+      );
 
   static TextStyle get bodyMedium => GoogleFonts.inter(
-    fontSize: 14,
-    fontWeight: FontWeight.w400,
-    color: AppColors.textSecondary,
-  );
-  
+        fontSize: 14,
+        fontWeight: FontWeight.w400,
+        color: AppColors.textSecondary,
+      );
+
   static TextStyle get bodySmall => GoogleFonts.inter(
-    fontSize: 12,
-    fontWeight: FontWeight.w400,
-    color: AppColors.textSecondary,
-  );
+        fontSize: 12,
+        fontWeight: FontWeight.w400,
+        color: AppColors.textSecondary,
+      );
 
   // Button Text
   static TextStyle get buttonText => GoogleFonts.inter(
-    fontSize: 16,
-    fontWeight: FontWeight.w600,
-    color: Colors.white,
-    letterSpacing: 0.5,
-  );
+        fontSize: 16,
+        fontWeight: FontWeight.w600,
+        color: Colors.white,
+        letterSpacing: 0.5,
+      );
 }
 
 class AppTheme {
@@ -91,7 +91,7 @@ class AppTheme {
       ),
       scaffoldBackgroundColor: AppColors.background,
       fontFamily: GoogleFonts.inter().fontFamily,
-      
+
       // AppBar Theme
       appBarTheme: AppBarTheme(
         backgroundColor: AppColors.surface,
@@ -103,10 +103,10 @@ class AppTheme {
       ),
 
       // Card Theme
-      cardTheme: CardTheme(
+      cardTheme: CardThemeData(
         color: AppColors.surface,
         elevation: 2,
-        shadowColor: Colors.black.withOpacity(0.1),
+        shadowColor: Colors.black.withValues(alpha: 0.1),
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
         margin: const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
       ),
@@ -143,7 +143,7 @@ class AppTheme {
           textStyle: AppTextStyles.buttonText,
         ),
       ),
-      
+
       outlinedButtonTheme: OutlinedButtonThemeData(
         style: OutlinedButton.styleFrom(
           foregroundColor: AppColors.primary,
@@ -155,6 +155,7 @@ class AppTheme {
       ),
     );
   }
+
   static ThemeData get darkTheme {
     return ThemeData(
       useMaterial3: true,
@@ -183,12 +184,11 @@ class AppTheme {
       ),
 
       // Card Theme
-      cardTheme: CardTheme(
+      cardTheme: CardThemeData(
         color: const Color(0xFF1E1E1E),
         elevation: 0,
         shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(16),
-            side: BorderSide(color: Colors.grey.shade800)),
+            borderRadius: BorderRadius.circular(16), side: BorderSide(color: Colors.grey.shade800)),
         margin: const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
       ),
 
@@ -234,7 +234,7 @@ class AppTheme {
           textStyle: AppTextStyles.buttonText,
         ),
       ),
-      
+
       // Icon Theme
       iconTheme: const IconThemeData(color: Colors.white),
     );
